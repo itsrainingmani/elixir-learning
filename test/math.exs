@@ -12,6 +12,22 @@ defmodule Math do
     # the ? after the f name means it returns a boolean
     def zero?(0), do: true
     def zero?(x) when is_integer(x), do: false
+
+    def sum_list([head | tail], accumulator) do
+        sum_list(tail, head+accumulator)
+    end
+
+    def sum_list([], accumulator) do
+        accumulator
+    end
+
+    def double_each([head | tail]) do
+        [head * 2 | double_each(tail)]
+    end
+
+    def double_each([]) do
+        []
+    end
 end
 
 defmodule Concat do
@@ -58,6 +74,8 @@ IO.puts DefaultTest.dowork
 IO.puts DefaultTest .dowork 123
 
 Recursion.print_multiple_times("Recursion", 3)
+
+IO.puts Math.sum_list([1,2,3], 0)
 
 # # IO.puts Math.do_sum(1,2)
 # IO.puts Math.zero?([1,2,3])
