@@ -8,7 +8,7 @@ defmodule Math do
     defp do_sum(a,b) do
         a + b
     end
-    
+
     # the ? after the f name means it returns a boolean
     def zero?(0), do: true
     def zero?(x) when is_integer(x), do: false
